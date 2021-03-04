@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <locale.h>
 #include <math.h>
 #include <ctype.h>
 #include <string.h>
@@ -22,7 +21,7 @@ int isOk(int* arr)
 void inputHandler(char* buff, int* arr)
 {
 	int i = 0;
-	printf("Введите координаты клеток\n");
+	printf("Enter coordinates\n");
 	while (!isOk(arr))
 	{
 		fgets(buff, 50, stdin);
@@ -39,7 +38,7 @@ void inputHandler(char* buff, int* arr)
 		}
 		else
 		{
-			printf("Некорректный ввод((\n");
+			printf("Incorrect input\n");
 		}
 	}
 }
@@ -53,7 +52,6 @@ int main()
 	int i = 0;
 	int coordinates[4];
 	int * grid = NULL;
-	setlocale(LC_ALL, "ru");
 	grid = init();
 	for (i = 0; i < 4; i++)
 	{
@@ -62,11 +60,11 @@ int main()
 	inputHandler(buff, coordinates);
 	if(isOneColor(coordinates, grid))
 	{
-	    printf("Одного цвета");
+	    printf("Same color");
 	}
 	else
 	{
-	    printf("Не одного цвета");
+	    printf("Not same color");
 	}
 	free(grid);
 	return 0;
@@ -93,9 +91,9 @@ int* init()
 			{
 				*(arr + i * 8 + j) = 0;
 			}
-			printf("%i ", *(arr + i * 8 + j));
+			/*printf("%i ", *(arr + i * 8 + j));*/
 		}
-		printf("\n");
+		/*printf("\n");*/
 	}
 	return arr;
 }
