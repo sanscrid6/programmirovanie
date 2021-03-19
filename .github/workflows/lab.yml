@@ -1,4 +1,4 @@
-name: lab3
+name: lab
 
 on:
   push:
@@ -12,5 +12,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: make
       run: |
+        cd lab3/
         make test
         ./test
