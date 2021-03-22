@@ -13,4 +13,5 @@ int main()
 {
    test();
    printf("Tests passed");
+   return 0;
 }
