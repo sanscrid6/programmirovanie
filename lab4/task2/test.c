@@ -23,4 +23,5 @@ int main() {
     assert(counter(file) == 1);
     fclose(file);
     printf("Tests passed");
+    return 0;
 }
