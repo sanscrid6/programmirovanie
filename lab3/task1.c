@@ -60,9 +60,12 @@ void inputHandler(int* n, int* m)
     while(*m<1 && *n<1)
     {
         char buff[50];
-        printf("Enter n, m\n");
+        printf("Enter n\n");
         fgets(buff, 50, stdin);
-        sscanf(buff, "%i %i", n, m);
+        n = atoi(buff);
+        printf("Enter m\n");
+        fgets(buff, 50, stdin);
+        m = atoi(buff);
     }
 }
 
