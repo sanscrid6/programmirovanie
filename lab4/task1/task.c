@@ -19,9 +19,17 @@ int main() {
         horizontalSize = 4+i;
         printf("Matrix number %i\n", i+1);
         matrixes[i] = (char***)malloc(sizeof(char***)*verticalSize);
-        initMatrix(matrixes[i],verticalSize, horizontalSize, strs);
-        editMatrix(matrixes[i], verticalSize, horizontalSize);
-        freeMatrix(matrixes[i], verticalSize);
+        if(matrixes[i] != NULL)
+        {
+            initMatrix(matrixes[i],verticalSize, horizontalSize, strs);
+            editMatrix(matrixes[i], verticalSize, horizontalSize);
+            freeMatrix(matrixes[i], verticalSize);
+        }
+        else
+        {
+            printf("Cannot create array\n");
+        }
+
     }
     return 0;
 }
