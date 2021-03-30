@@ -6,6 +6,7 @@
 
 int main() {
     const int n = 3;
+    int result;
     char*** matrixes[n];
     int horizontalSize = 4, verticalSize = 3, i = 0;
     char* strs[4];
@@ -21,9 +22,16 @@ int main() {
         matrixes[i] = (char***)malloc(sizeof(char***)*verticalSize);
         if(matrixes[i] != NULL)
         {
-            initMatrix(matrixes[i],verticalSize, horizontalSize, strs);
-            editMatrix(matrixes[i], verticalSize, horizontalSize);
-            freeMatrix(matrixes[i], verticalSize);
+            result = initMatrix(matrixes[i],verticalSize, horizontalSize, strs);
+            if(result == 0)
+            {   
+                editMatrix(matrixes[i], verticalSize, horizontalSize);
+                freeMatrix(matrixes[i], verticalSize);
+            }
+            else
+            {
+                 printf("Cannot create array\n");
+            }
         }
         else
         {
