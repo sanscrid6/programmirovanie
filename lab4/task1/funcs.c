@@ -16,12 +16,17 @@ int isPalindrome(char* str)
     return 1;
 }
 
-void initMatrix(char*** matrix, int verticalSize, int horizontalSize, char** strings)
+int initMatrix(char*** matrix, int verticalSize, int horizontalSize, char** strings)
 {
     int i = 0, j = 0, size = sizeof(strings)/2;
     for(i = 0; i<verticalSize; i++)
     {
         matrix[i] = (char**)malloc(sizeof(char**)*horizontalSize);
+        if(matrix[i] == NULL)
+        {
+            printf("Cannot create array")
+            return 1;
+        }
     }
     for(i = 0; i<verticalSize; i++)
     {
@@ -30,6 +35,8 @@ void initMatrix(char*** matrix, int verticalSize, int horizontalSize, char** str
             matrix[i][j] = strings[j%(size)];
         }
     }
+    
+    return 0;
 }
 
 void freeMatrix(char*** matrix, int verticalSize)
@@ -114,4 +121,5 @@ void editMatrix(char*** matrix, int verticalSize, int horizontalSize)
         printf("\n");
     }
     printf("\n\n");
+    free(temp);
 }
