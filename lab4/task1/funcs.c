@@ -24,7 +24,7 @@ int initMatrix(char*** matrix, int verticalSize, int horizontalSize, char** stri
         matrix[i] = (char**)malloc(sizeof(char**)*horizontalSize);
         if(matrix[i] == NULL)
         {
-            printf("Cannot create array")
+            printf("Cannot create array");
             return 1;
         }
     }
@@ -121,5 +121,4 @@ void editMatrix(char*** matrix, int verticalSize, int horizontalSize)
         printf("\n");
     }
     printf("\n\n");
-    free(temp);
 }
