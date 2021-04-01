@@ -3,7 +3,7 @@
 #include <time.h>
 #include <assert.h>
 #include "funcs.h"
-#define T int
+
 
 void test()
 {

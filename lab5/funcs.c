@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "funcs.h"
-#define T int
+
 
 
 void push_back(struct Node** head, struct Node** tail, T data)

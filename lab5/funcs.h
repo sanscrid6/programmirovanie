@@ -1,6 +1,7 @@
 #ifndef FUNCS_H
 #define FUNCS_H
-#define T int
+typedef int T;
+
 struct Node{
     T value;
     struct Node* next;

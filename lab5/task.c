@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "funcs.h"
-#define T int
+
 
 int main() {
     struct Node* head1 = NULL;
