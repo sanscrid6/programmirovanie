@@ -15,7 +15,7 @@ int counter(FILE* f) {
         while (string[i] != '\0') {
             if (isdigit(string[i])) {
                 c = string[i];
-                temp = atoi(&c);
+                temp = c- '0';
                 arr[0] += temp;
             }
             if (string[i] == ' ') {
