@@ -18,3 +18,14 @@ jobs:
         cd ../task1/
         make test
         ./test
+        cd ../../lab3/
+        make test
+        ./test
+        cd ../lab5/
+        make test
+        ./test
+        cd ../lab6/
+        make test
+        ./test
+        
+        
