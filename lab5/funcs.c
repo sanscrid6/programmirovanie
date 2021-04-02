@@ -3,11 +3,13 @@
 #include <time.h>
 #include "funcs.h"
 
-
-
-void push_back(struct Node** head, struct Node** tail, T data)
+int push_back(struct Node** head, struct Node** tail, T data)
 {
     struct Node* node = (struct Node*)malloc(sizeof(struct Node));
+    if(!node)
+    {
+        return 1;
+    }
     node->value = data;
     node->next = NULL;
     node->prev = NULL;
@@ -22,6 +24,7 @@ void push_back(struct Node** head, struct Node** tail, T data)
         (*tail)->prev = *tail;
         (*tail) = node;
     }
+    return 0;
 }
 
 int isEqual(T a, T b)
@@ -52,11 +55,15 @@ void print(struct Node** head)
     }
 }
 
-void sort(struct Node** head)
+int sort(struct Node** head)
 {
     int size  = countSize(head), i = 0, j = 1;
     struct Node* node = *head;
     T* arr = (T*)malloc(sizeof(T) * size);
+    if(!arr)
+    {
+        return 1;
+    }
     node = *head;
     while(node)
     {
@@ -87,6 +94,7 @@ void sort(struct Node** head)
         i++;
     }
     free(arr);
+    return 0;
 }
 
 

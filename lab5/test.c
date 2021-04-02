@@ -9,10 +9,10 @@ void test()
 {
     struct Node* head = NULL;
     struct Node* tail = NULL;
-    push_back(&head, &tail, 1);
-    push_back(&head, &tail, 2);
-    push_back(&head, &tail, 3);
-    push_back(&head, &tail, 4);
+    assert(push_back(&head, &tail, 1) == 0);
+    assert(push_back(&head, &tail, 2) == 0);
+    assert(push_back(&head, &tail, 3) == 0);
+    assert(push_back(&head, &tail, 4) == 0);
     assert(isEqual(1,2) == 0);
     assert(isEqual(1,1) == 1);
     assert(countSize(&head) == 4);
