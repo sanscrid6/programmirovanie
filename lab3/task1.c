@@ -56,16 +56,18 @@ int** init(int n, int m)
 
 void inputHandler(int* n, int* m)
 {
-
+    int check;
     while(*m<1 && *n<1)
     {
         char buff[50];
-        printf("Enter n\n");
+        printf("Enter n, m\n");
         fgets(buff, 50, stdin);
-        n = atoi(buff);
-        printf("Enter m\n");
-        fgets(buff, 50, stdin);
-        m = atoi(buff);
+        check = sscanf(buff,"%i %i", n , m);
+        if(check != 2)
+        {
+            *m = -1;
+            *n = -1;
+        }
     }
 }
 
