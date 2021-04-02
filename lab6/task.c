@@ -16,22 +16,10 @@ int main()
         check = addNode(&root, rand()%35);
         if(check == 1)
         {
+            printf("Malloc error");
             return 1;
         }
     }
-    /*addNode(&root ,7);
-    addNode(&root, 3);
-    addNode(&root, 1);
-    addNode(&root, 9);
-    addNode(&root, 21);
-    addNode(&root, 4);
-    addNode(&root, 5);
-    addNode(&root, 6);
-    addNode(&root, 20);
-    addNode(&root, 19);
-    addNode(&root, 18);
-    addNode(&root, 17);
-    addNode(&root, 16);*/
     sumOfLongestBranch(&root, 0, &length, &sum);
     printf("Max length of branch is %i\nSum is %i", length, sum);
     freeTree(root);
