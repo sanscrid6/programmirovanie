@@ -17,5 +17,6 @@ int lengthOfLeft(struct Node** current, int start, int* sum);
 int lengthOfRight(struct Node** current, int start, int* sum);
 void sumOfLongestBranch(struct Node** current, int start, int* length, int* sum);
 void freeTree(struct Node* root);
+void inputHandler(struct Node** root);
 
 #endif
