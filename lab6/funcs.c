@@ -3,6 +3,27 @@
 #include "funcs.h"
 
 
+
+void inputHandler(struct Node** root)
+{
+    int data = 3, result, i = 0, check = 0 ;
+    char buff[50];
+    while(1)
+    {
+        check = 0;
+        printf("Enter number\n");
+        fgets(buff, 50, stdin);
+        for(i = 0; i<strlen(buff); i++)
+        {
+            if(buff[i] == '.' || buff[i] == ',') check = 2;
+        }
+        check += sscanf(buff, "%d", &data);
+        if(check == 1 && data != 0) addNode(root, data);
+        else if(check != 1) printf("Incorrect input\n");
+        else if(check == 1 && data == 0) break;
+    }
+}
+
 int addNode(struct Node** root, int data)
 {
     struct Node* node = (struct Node*)malloc(sizeof(struct Node));
