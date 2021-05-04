@@ -48,6 +48,8 @@ void test()
     auto testPair = findPair(testPerson[0], users);
     assert(testPair.SNP == "Vitaliy Tsal");
     assert(testPair.id == 0);
+    info(testPair);
+    makeMeeting(testPerson, testPair);
     end(users, "testBd");
 }
 
