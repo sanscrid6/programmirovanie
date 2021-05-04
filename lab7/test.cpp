@@ -49,7 +49,7 @@ void test()
     assert(testPair.SNP == "Vitaliy Tsal");
     assert(testPair.id == 0);
     info(testPair);
-    makeMeeting(testPerson, testPair);
+    makeMeeting(testPerson[0], testPair);
     end(users, "testBd");
 }
 
