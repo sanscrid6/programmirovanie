@@ -2,7 +2,7 @@
 #define FILESTUFF_H
 #include "person.h"
 #include <vector>
-#include "inputhandler.h"
+#include "mixing.h"
 #include "fstream"
 #include "iostream"
 using namespace std;

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <sstream>
 #include "person.h"
 #include "inputhandler.h"
 using namespace std;
@@ -34,6 +35,10 @@ vector<Person>::iterator findName(vector<Person>& users, const string& key);
 Person findPair(Person p, vector<Person>& users);
 
 void info(const Person& p);
+
+vector<string> split(const std::string& s, char delimiter);
+
+bool validateDate(string date, vector<int>& d);
 
 void makeMeeting(Person p1, Person p2);
 

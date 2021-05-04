@@ -1,5 +1,43 @@
 #include "mixing.h"
 
+
+
+vector<string> split(const std::string& s, char delimiter)
+{
+    vector<std::string> tokens;
+    string token;
+    istringstream tokenStream(s);
+    while (getline(tokenStream, token, delimiter))
+    {
+        tokens.push_back(token);
+    }
+    return tokens;
+}
+
+bool validateDate(string date, vector<int>& d)
+{
+    vector<string> temp = split(date, ':');
+    if(temp.size() != 3) return false;
+    for(size_t i = 0; i <temp.size(); i++)
+    {
+        for(size_t j = 0; j <temp[i].size(); j++)
+        {
+            if(!isdigit(temp[i][j]) && temp[i][j] != ':') return false;
+        }
+    }
+    for(size_t i = 0; i < temp.size(); i++)
+    {
+        d.push_back(stoi(temp[i]));
+    }
+    if(d[2] > 2021) return false;
+    if(d[1] == 2 && (d[0]<0 || d[0]>28)) return false;
+    if((d[1] == 1 || d[1] == 3 || d[1] == 5 || d[1] == 7 || d[1] == 8 || d[1] == 10 || d[1] == 12) && (d[0]<0 || d[0]>31))
+        return false;
+    if((d[1] == 4 || d[1] == 6 || d[1] == 9 || d[1] == 11) && (d[0]<0 || d[0]>30)) return false;
+    return true;
+}
+
+
 vector<Person>::iterator findName(vector<Person>& users, const string& key)
 {
     for(auto it = users.begin(); it != users.end(); ++it)
