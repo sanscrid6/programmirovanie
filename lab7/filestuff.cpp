@@ -1,56 +1,44 @@
 #include "filestuff.h"
-
 void start(vector<Person>& users, string name) {
     ifstream in;
     in.open(name+".txt");
     string s;
-    while (!in.eof())
-    {
+    while (!in.eof()) {
         string temp;
         string name;
-        int id;
-        int sex;
-        double height;
-        double weight;
         string city;
         getline(in ,temp);
         if(in.eof()) break;
         getline(in, temp);
-        id = stoi(temp);
+        int id = stoi(temp);
         getline(in, name);
         getline(in, temp);
-        sex = stoi(temp);
+        int sex = stoi(temp);
         vector<int> date;
         getline(in, temp);
         validateDate(temp, date);
         getline(in, temp);
-        height = stod(temp);
+        double height = stod(temp);
         getline(in, temp);
-        weight = stod(temp);
+        double weight = stod(temp);
         getline(in, city);
         vector<string> interests;
-        do
-        {
+        do {
             getline(in, temp);
             if(temp != "interests") interests.push_back(temp);
         } while(temp != "interests");
         vector<string> badHabits;
-        do
-        {
+        do {
             getline(in, temp);
             if(temp != "bad habits") badHabits.push_back(temp);
         } while(temp != "bad habits");
-
         vector<string> info;
-        do
-        {
+        do {
             getline(in, temp);
             if(temp != "info") info.push_back(temp);
         } while(temp != "info");
-
         vector<string> partner;
-        do
-        {
+        do {
             getline(in, temp);
             if(temp != "partner") partner.push_back(temp);
         } while(temp != "partner");
@@ -58,13 +46,11 @@ void start(vector<Person>& users, string name) {
     }
     in.close();
 }
-
 void end(vector<Person>& users, string name)
 {
     ofstream of;
     of.open(name + ".txt");
-    for(auto it = users.begin(); it!=users.end(); ++it)
-    {
+    for(auto it = users.begin(); it!=users.end(); ++it) {
         of<<endl;
         of<<it->id<<endl;
         of<<it->SNP<<endl;
@@ -73,25 +59,13 @@ void end(vector<Person>& users, string name)
         of<<it->height<<endl;
         of<<it->weight<<endl;
         of<<it->city<<endl;
-        for(int i = 0 ; i<it->interests.size(); i++)
-        {
-            of<<it->interests[i]<<endl;
-        }
+        for(int i = 0 ; i<it->interests.size(); i++) of<<it->interests[i]<<endl;
         of<<"interests"<<endl;
-        for(int i = 0 ; i<it->badHabits.size(); i++)
-        {
-            of<<it->badHabits[i]<<endl;
-        }
+        for(int i = 0 ; i<it->badHabits.size(); i++) of<<it->badHabits[i]<<endl;
         of<<"bad habits"<<endl;
-        for(int i = 0 ; i<it->info.size(); i++)
-        {
-            of<<it->info[i]<<endl;
-        }
+        for(int i = 0 ; i<it->info.size(); i++) of<<it->info[i]<<endl;
         of<<"info"<<endl;
-        for(int i = 0 ; i<it->partner.size(); i++)
-        {
-            of<<it->partner[i]<<endl;
-        }
+        for(int i = 0 ; i<it->partner.size(); i++) of<<it->partner[i]<<endl;
         of<<"partner"<<endl;
     }
     of.close();

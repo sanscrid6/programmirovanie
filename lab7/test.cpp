@@ -6,8 +6,6 @@
 #include "mixing.h"
 #include <assert.h>
 using namespace std;
-
-
 void test()
 {
     vector<int> current_date;
@@ -28,8 +26,7 @@ void test()
     string name = "Vitaliy Tsal";
     auto p = findName(users, name);
     assert((*p).SNP == name);
-    try
-    {
+    try {
         findName(users,"asd");
     }
     catch(MyException& e)
