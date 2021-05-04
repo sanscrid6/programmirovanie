@@ -69,5 +69,4 @@ void end(vector<Person>& users, string name)
         of<<"partner"<<endl;
     }
     of.close();
-    users.clear();
 }
