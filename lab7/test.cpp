@@ -49,6 +49,7 @@ void test()
     assert(testPair.SNP == "Vitaliy Tsal");
     assert(testPair.id == 0);
     end(users);
+    assert(users.size() == 0);
 }
 
 int main()
