@@ -1,0 +1,48 @@
+
+0
+Vitaliy Tsal
+1
+13:11:1991
+1.81
+75
+Vinitsa
+Kazik
+Sport
+Balik
+Twix with bread
+interests
+Dota 1
+Dota 2
+Minecraft
+bad habits
+like twix with bread
+professional jogger
+info
+height:1.50-1.70
+weight:45-55
+age:20-30
+interests:streaming
+information:red hair
+partner
+
+1
+Vladislav Sinotov
+1
+7:7:1999
+1.9
+85
+Tver
+Hearstone
+Bg
+Warcraft
+interests
+Svin
+bad habits
+streamer
+favourite animal sova
+info
+height:1.50-1.60
+weight:50-60
+age:22-27
+interests:Hearstone,bg
+partner

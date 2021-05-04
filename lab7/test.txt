@@ -1,0 +1,26 @@
+
+2
+Vika Red
+0
+1:7:2000
+1.60
+50
+Ufa
+Shopping
+Gamming
+Streaming
+interests
+Smoking
+Drinking
+bad habits
+has cat
+red hair
+info
+height:1.70-1.90
+weight:60-80
+age:25-31
+interests:Kazik,Balik
+information:streaming
+bad habits:Dota 2
+city:Vinitsa,Tver
+partner
