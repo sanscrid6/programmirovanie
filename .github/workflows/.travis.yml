@@ -1,11 +1,21 @@
-language: c
-sudo: false 
-script:
-  - g++ -fprofile-arcs -ftest-coverage test.cpp filestuff.cpp mixing.cpp inputhandler.cpp -o test -lm
-  - ./test
-  - gcov filestuff.cpp -r
-  - gcov mixing.cpp -r
-  - gcov inputhandler.cpp -r
+name: lab
 
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+on:
+  push:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: |
+        cd lab7/
+        make test
+        ./test
+        gcov filestuff.cpp -r
+        gcov mixing.cpp -r
+        gcov inputhandler.cpp -r
+        bash <(curl -s https://codecov.io/bash)
