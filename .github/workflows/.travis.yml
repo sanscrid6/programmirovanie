@@ -17,5 +17,4 @@ jobs:
         ./test
         gcov filestuff.cpp -r
         gcov mixing.cpp -r
-        gcov inputhandler.cpp -r
         bash <(curl -s https://codecov.io/bash)
